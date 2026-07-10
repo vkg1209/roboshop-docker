@@ -1,8 +1,11 @@
+
+
 FROM node:20.19.5-alpine3.21 AS build
 WORKDIR /opt/server
-COPY package.json . 
+COPY package.json .
 COPY *.js .
-RUN npm install
+RUN npm install 
+
 
 FROM node:20.19.5-alpine3.21
 WORKDIR /opt/server
@@ -18,4 +21,3 @@ COPY --from=build --chown=roboshop:roboshop /opt/server /opt/server
 USER roboshop
 CMD ["server.js"]
 ENTRYPOINT ["node"]
-
