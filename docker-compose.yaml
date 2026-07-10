@@ -32,8 +32,9 @@ services:
     - redis
 
   cart:
-    context: ./cart
-    dockerfile: Dockerfile
+    build:
+      context: ./cart
+      dockerfile: Dockerfile
     image: vinayakumar/cart:v1
     container_name: cart
     depends_on:
