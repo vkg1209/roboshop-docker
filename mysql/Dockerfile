@@ -3,7 +3,7 @@ ENV MYSQL_ROOT_PASSWORD="RoboShop@1"
 ENV CART_ENDPOINT=cart:8080
 ENV DB_HOST=mysql
 COPY db/ /docker-entrypoint-initdb.d
-CMD ["java", "-jar", "/app/shipping.jar"]
+CMD ["java", "-jar", "shipping.jar"]
 
 Environment=CART_ENDPOINT=<CART-SERVER-IPADDRESS>:8080
 Environment=DB_HOST=<MYSQL-SERVER-IPADDRESS>
